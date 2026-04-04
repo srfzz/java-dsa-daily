@@ -14,9 +14,15 @@ public class MathRunner {
         /*Progarm to find a given number is palindrome */
         int numberToCheckForPlaindrome=1221;
         System.out.println(numberToCheckForPlaindrome+" is :"+numberProbelms.checkPlaindromeNumber(numberToCheckForPlaindrome));
-
-
-
+        /* check if the number is Armstraong or not */
+        int armsNumsCheck=156;
+        System.out.println(numberProbelms.chcekForArmstrsongNumber(armsNumsCheck));
+        /* Print all Divisors */
+        numberProbelms.printAllTheDivisors(1800);
+        /* progarm to chcek gcd of two numbers*/
+        numberProbelms.findGcdOfTwoNumbers(12, 16);
+        /* program to chvek if the given number is prime or Not */
+        System.out.println(numberProbelms.checkPrime(10));
     }
 
 }

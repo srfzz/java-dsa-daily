@@ -36,4 +36,57 @@ public class BasicHashingSolution {
         }
     }
 
+
+    /*solution Highest Occurring Element in an Array */
+    public void  highestOccuringElementBruteMethod(int[] nums){
+        int n =nums.length;
+        boolean[] visited =new boolean[n];
+      int maxCount=0;
+      int highestElement=-1;
+        for(int i=0;i<n;i++)
+        {
+            if(visited[i]) continue;
+            int count=1;
+            for(int j=i+1;j<n;j++)
+            {
+             if(nums[i]==nums[j])
+             {
+                visited[j]=true;
+                count++;
+             }
+            }
+            if(count > maxCount){
+                maxCount=count;
+                highestElement=nums[i];
+            }
+            
+        }
+        System.out.printf("Highest Occuring Element is :%d count is %d \n ", nums[highestElement],maxCount);
+
+    }
+
+    /*
+    Highest Occurring Element in an Array
+    */
+
+    public void highestoccuringElementhashMethod(int[] nums){
+        Map<Integer,Integer> map=new HashMap<>();
+        for( int n:nums)
+        {
+            map.put(n, map.getOrDefault(n, 0)+1);
+        }
+        int maxCount=0;
+        int highestElement=-1;
+        for(Map.Entry<Integer,Integer> entry: map.entrySet()){
+            if(entry.getValue() > maxCount)
+            {
+                maxCount=entry.getValue();
+                highestElement=entry.getKey();
+            }
+        }
+    System.out.printf("Highest Occurance is %d ,count is %d using Hashmap \n",highestElement,maxCount);
+        
+
+    }
+
 }

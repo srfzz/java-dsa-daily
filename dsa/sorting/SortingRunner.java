@@ -7,10 +7,12 @@ public class SortingRunner {
     {
         SortingSolution sol=new SortingSolution();
         Random rnm=new Random();
-        int[] arr= new int[100];
+        int[] arr= new int[20];
+        int[] bnum=new int[20];
         for(int i=0;i<arr.length;i++)
         {
-            arr[i]=rnm.nextInt(156);
+            arr[i]=rnm.nextInt(29);
+            bnum[i]=rnm.nextInt(30);
         }
 
         /*
@@ -18,6 +20,11 @@ public class SortingRunner {
 
         */
        sol.selectionSortTech(arr);
+
+       /*
+       Bubble Sort
+       */
+      sol.bubbleSortExample(bnum);
     }
 
 }

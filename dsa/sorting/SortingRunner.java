@@ -10,11 +10,14 @@ public class SortingRunner {
         int[] arr= new int[20];
         int[] bnum=new int[20];
         int[] insnum=new int[20];
+        int[] mersnum=new int[20];
+
         for(int i=0;i<arr.length;i++)
         {
             arr[i]=rnm.nextInt(29);
             bnum[i]=rnm.nextInt(30);
             insnum[i]=rnm.nextInt(28);
+            mersnum[i]=rnm.nextInt(23);
         }
 
         /*
@@ -32,6 +35,11 @@ public class SortingRunner {
 
       /* insertion sort */
      sol.insertionSortExample(insnum);
+
+
+
+
+     /* Merge Sort using recursion */
 
     }
 

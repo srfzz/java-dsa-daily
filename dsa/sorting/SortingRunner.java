@@ -9,10 +9,12 @@ public class SortingRunner {
         Random rnm=new Random();
         int[] arr= new int[20];
         int[] bnum=new int[20];
+        int[] insnum=new int[20];
         for(int i=0;i<arr.length;i++)
         {
             arr[i]=rnm.nextInt(29);
             bnum[i]=rnm.nextInt(30);
+            insnum[i]=rnm.nextInt(28);
         }
 
         /*
@@ -25,6 +27,12 @@ public class SortingRunner {
        Bubble Sort
        */
       sol.bubbleSortExample(bnum);
+
+
+
+      /* insertion sort */
+     sol.insertionSortExample(insnum);
+
     }
 
 }

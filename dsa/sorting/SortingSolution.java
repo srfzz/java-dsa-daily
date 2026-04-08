@@ -95,18 +95,18 @@ public class SortingSolution {
     /* Solution to merge Sort */
     public void mergeSortExample(int[] arr,int left,int right)
     {
+
+        System.out.printf("\nleft index is : %d and right index is %d \n",left,right);
         if(left < right)
         {
 
             //we will first find the middle point
             int mid=left +(right-left)/2;
+            System.out.println("Mid is :"+mid);
 
             //we will sorrt fist and second halves 
             mergeSortExample(arr, left, mid);
             mergeSortExample(arr, mid +1, right);
-
-
-            //we will merge the sprted arrays
             merge(arr,left,mid,right);
         }
     }
@@ -151,6 +151,56 @@ private void merge(int[] arr, int left, int mid, int right) {
             j++;
             k++;
         }
+    }
+
+
+    // This is the recursive function that keeps splitting the array
+    public void quickSort(int[] arr, int low, int high) {
+        // Base Case: If the segment has more than one element
+        if (low < high) {
+            
+            // 1. Partition: Put the pivot in the right spot and get its index
+            int pi = partition(arr, low, high);
+
+            // 2. Sort the elements BEFORE the pivot
+            quickSort(arr, low, pi - 1);
+            
+            // 3. Sort the elements AFTER the pivot
+            quickSort(arr, pi + 1, high);
+        }
+    }
+
+    // The "Heart" of QuickSort: This logic organizes the numbers around a pivot
+    private int partition(int[] arr, int low, int high) {
+        // We choose the last element as our 'Pivot' (The leader)
+        int pivot = arr[high]; 
+        
+        // 'i' is the boundary for elements smaller than the pivot
+        // It starts outside the array to the left
+        int i = (low - 1); 
+
+        // 'j' explores the array from the start to the element before the pivot
+        for (int j = low; j < high; j++) {
+            
+            // If the current element is smaller than or equal to our leader (pivot)
+            if (arr[j] <= pivot) {
+                i++; // Move the boundary forward
+                
+                // Swap the smaller element found at j with the element at index i
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // After the loop, all elements smaller than the pivot are to the left of i
+        // Now, we put the pivot in its final correct spot at (i + 1)
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+
+        // Return the index where the pivot is now sitting
+        return i + 1;
     }
 
 }

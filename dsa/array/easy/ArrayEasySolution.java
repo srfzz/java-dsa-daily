@@ -26,4 +26,51 @@ public class ArrayEasySolution {
         System.out.println(maxElement);
     }
 
+
+
+    /*Program to find Secomd largest Element */
+    public void secondLargestElementBrute(int[] nums)
+    {
+            Arrays.sort(nums); 
+
+    int n = nums.length;
+    int largest = nums[n - 1];
+    int secondLargest = -1; // Default if no second largest exists
+
+    // 2. Scan backwards to find the first number != largest
+    for (int i = n - 2; i >= 0; i--) {
+        if (nums[i] != largest) {
+            secondLargest = nums[i];
+            break; // Found it! Stop looking.
+        }
+    }
+
+    if (secondLargest == -1) {
+        System.out.println("No distinct second largest element");
+    } else {
+        System.out.println("Second Largest: " + secondLargest);
+    }
+
+    }
+    public void secondLargestUsingTwoPointer(int[] nums){
+        if(nums == null && nums.length < 2)
+        {
+            System.out.println(-1);
+        }
+        int largest=Integer.MIN_VALUE;
+        int secondLargest=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]>largest){
+                secondLargest=largest;
+                largest=nums[i];
+            }else if(nums[i] >secondLargest && nums[i] != largest)
+            {
+                secondLargest=nums[i];
+            }
+        }
+        System.out.println(secondLargest);
+
+    } 
+
 }

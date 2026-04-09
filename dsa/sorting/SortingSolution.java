@@ -201,6 +201,6 @@ private void merge(int[] arr, int left, int mid, int right) {
 
         // Return the index where the pivot is now sitting
         return i + 1;
-    }
+    } 
 
 }

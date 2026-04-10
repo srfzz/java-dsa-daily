@@ -34,6 +34,12 @@ public class ArrayEasyRunner {
         System.out.println();
         sol.secondLargestUsingTwoPointer(nums);
 
+        int[] numsToSort={1,2,3,4,5};
+
+        /*  chck if an array is sorted  */
+
+        sol.chcekIfSortedBrute(numsToSort);
+
     }
 
 }

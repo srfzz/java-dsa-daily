@@ -35,13 +35,11 @@ public class ArrayEasySolution {
 
     int n = nums.length;
     int largest = nums[n - 1];
-    int secondLargest = -1; // Default if no second largest exists
-
-    // 2. Scan backwards to find the first number != largest
+    int secondLargest = -1; 
     for (int i = n - 2; i >= 0; i--) {
         if (nums[i] != largest) {
             secondLargest = nums[i];
-            break; // Found it! Stop looking.
+            break;
         }
     }
 
@@ -72,5 +70,22 @@ public class ArrayEasySolution {
         System.out.println(secondLargest);
 
     } 
+    /*Check if the Array is Sorted II */
+public void chcekIfSortedBrute(int[] nums)
+{
+    int size=nums.length;
+    for(int i=0;i<size-1;i++)
+    {
+        if(nums[i] < nums[i+1] || nums[i]== nums[i+1])
+        {
+            continue;
+        }else
+        {
+            System.out.println("Array is not Sorted ");
+            break;
+        }
+    }
+    System.out.print("The Array is Sorted ");
+}
 
 }

@@ -107,5 +107,31 @@ public void chcekIfSortedBrute(int[] nums)
             System.out.println(nums[i]+"");
         }
      }
+    public int removeDublicateOptimalMethod(int[] nums){
+        if(nums == null || nums.length ==0){
+            return -1;
+        }
+        int i=0;
+        for(int j=1;j<nums.length;j++){
+                if(nums[j]!=nums[i])
+                {
+                    i++;
+                    nums[i]=nums[j];
+                }
+        }
+        return i+1;
+            
+    }
+
+
+    public void rotateArrayByOneSol(int[] nums){
+        System.out.println("Before Rotation by One :"+Arrays.toString(nums));
+        int temp=nums[0];
+        for(int i=1;i<nums.length;i++){
+            nums[i-1]=nums[i];
+        }
+        nums[nums.length-1]=temp;
+        System.out.println("Before After Rotation by One :"+Arrays.toString(nums));
+    }
 
 }

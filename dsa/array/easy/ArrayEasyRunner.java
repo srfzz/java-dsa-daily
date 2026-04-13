@@ -1,5 +1,6 @@
 package dsa.array.easy;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -14,13 +15,15 @@ public class ArrayEasyRunner {
             Random rn=new Random();
 
           int[] nums = new int[30];
-           int[] slarg = new int[30];
-            int[] dubsortarr = new int[30];
+          int[] slarg = new int[30];
+          int[] dubsortarr = new int[30];
+          int[] leftRotate = new int[30];
           for(int i=0;i<nums.length;i++)
           {
             nums[i]=rn.nextInt(33);
             slarg[i]=rn.nextInt(33);
             dubsortarr[i]=rn.nextInt(33);
+            leftRotate[i]=rn.nextInt(77);
           }
           System.out.println("largest elemet array to search from**\n"+Arrays.toString(nums));
           sol.largestElementBruteSol(nums);
@@ -43,10 +46,17 @@ public class ArrayEasyRunner {
         sol.chcekIfSortedBrute(numsToSort);
 
          int[] numsToSortRemDub={1,1,2,2,3,3,3,3,3,4,5,8};
+         int[] numsToSortRemDubOptimal={1,1,2,2,3,3,3,3,3,4,5,8};
         /*	Remove duplicates from Sorted array */
 
         System.out.println("after removeing dublicate on the sorted Array");
         sol.removeDublicateBruteMethod(numsToSortRemDub);
+        int size=sol.removeDublicateOptimalMethod(numsToSortRemDubOptimal);
+        for(int i=0;i<size;i++){
+          System.out.println(numsToSortRemDubOptimal[i]+"");
+        }
+        /*Left Rotate Array by One */
+        sol.rotateArrayByOneSol(leftRotate);
 
 
     }

@@ -15,10 +15,12 @@ public class ArrayEasyRunner {
 
           int[] nums = new int[30];
            int[] slarg = new int[30];
+            int[] dubsortarr = new int[30];
           for(int i=0;i<nums.length;i++)
           {
             nums[i]=rn.nextInt(33);
             slarg[i]=rn.nextInt(33);
+            dubsortarr[i]=rn.nextInt(33);
           }
           System.out.println("largest elemet array to search from**\n"+Arrays.toString(nums));
           sol.largestElementBruteSol(nums);
@@ -36,9 +38,16 @@ public class ArrayEasyRunner {
 
         int[] numsToSort={1,2,3,4,5};
 
-        /*  chck if an array is sorted  */
+        /*  check if an array is sorted  */
 
         sol.chcekIfSortedBrute(numsToSort);
+
+         int[] numsToSortRemDub={1,1,2,2,3,3,3,3,3,4,5,8};
+        /*	Remove duplicates from Sorted array */
+
+        System.out.println("after removeing dublicate on the sorted Array");
+        sol.removeDublicateBruteMethod(numsToSortRemDub);
+
 
     }
 

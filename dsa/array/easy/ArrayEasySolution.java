@@ -1,5 +1,9 @@
 package dsa.array.easy;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import java.util.TreeSet;
 public class ArrayEasySolution {
     /* larget element Brute force  */
     public void largestElementBruteSol(int[] arr)
@@ -51,7 +55,7 @@ public class ArrayEasySolution {
 
     }
     public void secondLargestUsingTwoPointer(int[] nums){
-        if(nums == null && nums.length < 2)
+        if(nums == null || nums.length < 2)
         {
             System.out.println(-1);
         }
@@ -87,5 +91,21 @@ public void chcekIfSortedBrute(int[] nums)
     }
     System.out.print("The Array is Sorted ");
 }
+
+     public void removeDublicateBruteMethod(int[] nums)
+     {
+         Collection<Integer> set= new TreeSet<>();
+         for(int num:nums){
+            set.add(num);
+         }
+        int j=0;
+        for(int uniqueNum:set){
+            nums[j++]=uniqueNum;
+        }
+        for(int i=0;i<j;i++)
+        {
+            System.out.println(nums[i]+"");
+        }
+     }
 
 }

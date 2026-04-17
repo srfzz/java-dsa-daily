@@ -1,4 +1,5 @@
 package dsa.array.easy;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -236,6 +237,51 @@ System.out.println(Arrays.toString(arr));
         }
         System.out.print("Not Found");
 
+    }
+    /* Union of two sorted arrays */
+    public void unionOfTwoSortedArray(int[] arrOne,int[] arrTwo){
+        List<Integer> unionArr =new ArrayList<>();
+        int i=0,j=0;
+        int m=arrOne.length;
+        int n=arrTwo.length;
+        while(i < n && j <m){
+            if(arrOne[i] < arrTwo[j])
+            {
+                if(unionArr.isEmpty() || unionArr.get(unionArr.size()- 1) != arrOne[i]){
+                unionArr.add(arrOne[i]);
+                
+                }
+                i++;
+            }else if(arrTwo[j] < arrOne[i]){
+                 if(unionArr.isEmpty() || unionArr.get(unionArr.size()- 1) != arrTwo[j]){
+                unionArr.add(arrTwo[j]);
+              
+                 }
+                   j++;
+            }else
+            {
+            if(unionArr.isEmpty() || unionArr.get(unionArr.size()- 1) != arrOne[i]){
+                unionArr.add(arrOne[i]);
+               
+                 }
+                  i++;
+                j++;
+            }
+          
+        }
+         while (i < m) {
+            if (unionArr.isEmpty() || unionArr.get(unionArr.size() - 1) != arrOne[i])
+                unionArr.add(arrOne[i]);
+            i++;
+        }
+        while (j < n) {
+            if (unionArr.isEmpty() || unionArr.get(unionArr.size() - 1) != arrTwo[j])
+                unionArr.add(arrTwo[j]);
+            j++;
+        }
+        for (Integer number : unionArr) {
+            System.out.print(number);
+        }
     }
     
 

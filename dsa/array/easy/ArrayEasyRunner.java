@@ -20,6 +20,8 @@ public class ArrayEasyRunner {
           int[] leftRotate = new int[30];
           int[] leftRotatebyK = new int[30];
           int[] lnSer=new int[30];
+          int[] arrOne=new int[30];
+          int[] arrTwo=new int[30];
 
           for(int i=0;i<nums.length;i++)
           {
@@ -29,6 +31,8 @@ public class ArrayEasyRunner {
             leftRotate[i]=rn.nextInt(77);
             leftRotatebyK[i]=rn.nextInt(77);
             lnSer[i]=rn.nextInt(100);
+            arrOne[i]=rn.nextInt(30);
+            arrTwo[i]=rn.nextInt(30);
 
           }
           System.out.println("largest elemet array to search from**\n"+Arrays.toString(nums));
@@ -73,6 +77,11 @@ public class ArrayEasyRunner {
       /* Linear Search */
       sol.linearSearchBrute(lnSer,77 );
       sol.binarySearch(lnSer, 43);
+      /*	Union of two sorted arrays */
+      int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] arr2 = {2, 3, 4, 4, 5, 11, 12};
+        sol.unionOfTwoSortedArray(arr1, arr2);
+    
 
 
 

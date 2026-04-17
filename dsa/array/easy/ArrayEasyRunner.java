@@ -18,12 +18,16 @@ public class ArrayEasyRunner {
           int[] slarg = new int[30];
           int[] dubsortarr = new int[30];
           int[] leftRotate = new int[30];
+          int[] leftRotatebyK = new int[30];
+
           for(int i=0;i<nums.length;i++)
           {
             nums[i]=rn.nextInt(33);
             slarg[i]=rn.nextInt(33);
             dubsortarr[i]=rn.nextInt(33);
             leftRotate[i]=rn.nextInt(77);
+            leftRotatebyK[i]=rn.nextInt(77);
+
           }
           System.out.println("largest elemet array to search from**\n"+Arrays.toString(nums));
           sol.largestElementBruteSol(nums);
@@ -57,6 +61,10 @@ public class ArrayEasyRunner {
         }
         /*Left Rotate Array by One */
         sol.rotateArrayByOneSol(leftRotate);
+        /*Left Rotate Array by K Places */
+        sol.rotateAnArrayByKplaces(leftRotate, 10);
+      /*Move Zeros to End */
+      int[] zeroNums={0,1,0,2,3,0,5,7,0};
 
 
     }

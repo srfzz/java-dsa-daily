@@ -133,5 +133,29 @@ public void chcekIfSortedBrute(int[] nums)
         nums[nums.length-1]=temp;
         System.out.println("Before After Rotation by One :"+Arrays.toString(nums));
     }
+    public void rotateAnArrayByKplaces(int[] arr,int k){
+        int n=arr.length;
+        k=k%n;
+        reverse(arr, 0, k-1);
+        reverse(arr, k+1, n-1);
+        reverse(arr, 0, n-1);
+System.out.println(Arrays.toString(arr));
+    }
+    private void reverse(int[] arr,int start,int end){
+        while(start < end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+
+    }
+    public void moveZeroesToEndBrute(int[] nums){
+        //int[] zeroNums={0,1,0,2,3,0,5,7,0}; Example of an array
+        
+        int size =nums.length;
+
+    }
 
 }

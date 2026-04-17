@@ -188,15 +188,54 @@ System.out.println(Arrays.toString(arr));
                     break;
                 }
             }   
-        for(int i=j+1;i<size;i++){
-                if(nums[i] !=0){
-                    int tempval=nums[i];
-                    nums[i]=nums[j];
-                    nums[j]=tempval;
-                    j++;
-                }
+       
+        for(int i=j+1;i<size;i++)
+        {
+            if(nums[i] !=0){
+                int tempValue=nums[i];
+                nums[i]=nums[j];
+                nums[j]=tempValue;
+            }
         }
         System.out.println(Arrays.toString(nums));
+    }
+    /*Liner serrach brute */
+    public void linearSearchBrute(int[] nums,int k){
+        System.out.println(Arrays.toString(nums));
+        int size=nums.length;
+        int i=0;
+        boolean found=false;
+        for(i=0;i<size;i++){
+            if(nums[i]==k){
+                found=true;
+            break;
+        }
+        }
+        if(found){
+            System.out.println("Found");
+        }else
+        {
+            System.out.println("Not Found");
+        }
+    }
+    public void binarySearch(int[] nums,int k){
+        Arrays.sort(nums);
+        int low=0,high=nums.length;
+        while(low <= high){
+            int mid=low + (high-low)/2;
+            if(nums[mid] ==k){
+                System.out.println("Found");
+                return;
+            }
+            if(nums[mid] < k){
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+
+        }
+        System.out.print("Not Found");
+
     }
     
 

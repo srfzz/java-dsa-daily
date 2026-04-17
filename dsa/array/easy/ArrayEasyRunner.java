@@ -64,7 +64,10 @@ public class ArrayEasyRunner {
         /*Left Rotate Array by K Places */
         sol.rotateAnArrayByKplaces(leftRotate, 10);
       /*Move Zeros to End */
-      int[] zeroNums={0,1,0,2,3,0,5,7,0};
+      int[] zeroNumsBrute={0,1,0,2,3,0,5,7};
+      sol.moveZeroesToEndBrute(zeroNumsBrute);
+      int[] zeroNumsOptimal={0,1,0,2,3,0,5,7};
+      sol.moveZeroToEndOptimal(zeroNumsOptimal);
 
 
     }

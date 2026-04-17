@@ -1,7 +1,9 @@
 package dsa.array.easy;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 public class ArrayEasySolution {
@@ -153,9 +155,49 @@ System.out.println(Arrays.toString(arr));
     }
     public void moveZeroesToEndBrute(int[] nums){
         //int[] zeroNums={0,1,0,2,3,0,5,7,0}; Example of an array
-        
-        int size =nums.length;
+         int size =nums.length;
+       List<Integer> temp=new ArrayList<>();
+       for(int i=0;i<size;i++)
+       {
+        if(nums[i] !=0)
+        {
+            temp.add(nums[i]);
+        }
+       }
+       int nonZeroSize=temp.size();
+       for(int i=0;i<nonZeroSize;i++)
+        {
+            nums[i]=temp.get(i);
+        }
+        for(int i=nonZeroSize;i<size;i++)
+        {
+            nums[i]=0;
+        }
+        System.out.println("Output of  move zertoes to the end ");
+        System.out.println(Arrays.toString(nums));
+       
 
     }
+    public void moveZeroToEndOptimal(int[] nums){
+        int size=nums.length;
+        int j=-1;
+        for(int i=0;i<size;i++)
+            {
+                if(nums[i]==0){
+                    j=i;
+                    break;
+                }
+            }   
+        for(int i=j+1;i<size;i++){
+                if(nums[i] !=0){
+                    int tempval=nums[i];
+                    nums[i]=nums[j];
+                    nums[j]=tempval;
+                    j++;
+                }
+        }
+        System.out.println(Arrays.toString(nums));
+    }
+    
 
 }

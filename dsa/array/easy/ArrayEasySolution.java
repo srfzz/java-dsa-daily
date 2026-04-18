@@ -283,6 +283,53 @@ System.out.println(Arrays.toString(arr));
             System.out.print(number);
         }
     }
-    
+    /*Find missing number brute Method  */
+    public void findMissingNumber(int[] nums){
+        
+        int size=nums.length;
+        System.out.println(" \nMissing Number is :");
+        for(int i=1;i<=nums.length+1;i++){
+            boolean found=false;
+            for(int j=0; j<size; j++){
+                   if(nums[j]==i){
+                    found=true;
+                    break;
+                   }
+            }
+            if(!found){
+                System.out.println(i);
+                return;
+            }
+        }
+    }
+    public void findMissingNumberOptimalmethod(int[] nums){
+        int n=nums.length+1;
+        int expectedSum=(n*(n+1))/2;
+        int actualSum=0;
+        for(int num:nums){
+            actualSum+=num;
+        }
+        System.out.printf("\n Missing Number Is : %d", expectedSum-actualSum);
+    }
+    /*ount Maximum Consecutive One's in the array */
+
+    public void countMaximumConsequtiveOneInAnArray(int[] nums){
+        int size=nums.length;
+
+        int count=0,maxCount=0;
+        for(int i=0;i<size;i++){
+            if(nums[i] == 1){
+                count++;
+            }else{
+                count=0;
+            }
+            System.out.println(maxCount);
+            maxCount=Math.max(maxCount,count);
+        }
+        System.out.println("\nConseutice Ones :");
+        System.out.println(maxCount+"\n");
+        
+
+    }
 
 }

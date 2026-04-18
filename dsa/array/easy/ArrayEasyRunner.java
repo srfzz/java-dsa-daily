@@ -79,8 +79,23 @@ public class ArrayEasyRunner {
       sol.binarySearch(lnSer, 43);
       /*	Union of two sorted arrays */
       int[] arr1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        int[] arr2 = {2, 3, 4, 4, 5, 11, 12};
-        sol.unionOfTwoSortedArray(arr1, arr2);
+      int[] arr2 = {2, 3, 4, 4, 5, 11, 12};
+      sol.unionOfTwoSortedArray(arr1, arr2);
+
+      /*  Find missing number */
+      int[] arrToCheckMissingNumber={8, 2, 4, 5, 3, 7, 1};
+      sol.findMissingNumber(arrToCheckMissingNumber);
+      sol.findMissingNumberOptimalmethod(arrToCheckMissingNumber);
+      
+
+      /* Maximum Consecutive Ones */
+      /*Example 1:
+        Input: prices = {1, 1, 0, 1, 1, 1}
+        Output: 3
+        Explanation: There are two consecutive 1’s and three consecutive 1’s in the array out of which maximum is 3.
+      */
+     int[] prices={1, 1, 0, 1, 1, 1,1,12,2,1,1,1,1,1,1,1,1,1,1,1};
+     sol.countMaximumConsequtiveOneInAnArray(prices);
     
 
 

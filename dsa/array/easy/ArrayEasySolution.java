@@ -1,10 +1,13 @@
 package dsa.array.easy;
 import java.lang.reflect.Array;
+import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 public class ArrayEasySolution {
@@ -331,5 +334,46 @@ System.out.println(Arrays.toString(arr));
         
 
     }
+
+
+    public void findNumberThatappearOnceBrute(int[] nums){
+        int size=nums.length;
+        for(int i=0;i<size;i++){
+            int num=nums[i];
+            int count=0;
+            for(int j=0;j<size;j++){
+                if(nums[j]==num){
+                    count++;
+                }
+            }
+            if(count==1){
+                System.out.println("Number with one Count is "+num);
+            }
+        }
+    }
+
+    public void findNumberThatappearOnceBetterApproch(int[] nums){
+        Map<Integer,Integer> countValues=new HashMap<>();
+        for(int num:nums){
+            countValues.put(num, countValues.getOrDefault(num, 0)+1);
+        }
+        for( Map.Entry<Integer,Integer> entry :countValues.entrySet()){
+            if(entry.getValue()==1){
+                System.out.println(entry.getKey());
+                return;
+        }
+      }
+    
+    }
+     public void findNumberThatappearOnceOptimalApproach(int[] nums){
+       int xxor=0;
+       for(int num:nums){
+        xxor^=num;
+       }
+       System.out.print(xxor);
+      
+    
+    }
+
 
 }

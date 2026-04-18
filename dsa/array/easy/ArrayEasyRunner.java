@@ -97,8 +97,18 @@ public class ArrayEasyRunner {
      int[] prices={1, 1, 0, 1, 1, 1,1,12,2,1,1,1,1,1,1,1,1,1,1,1};
      sol.countMaximumConsequtiveOneInAnArray(prices);
     
-
-
+     /*
+      Example 1:
+      Input Format: arr[] = {2,2,1}
+      Result: 1
+      Explanation: In this array, only the element 1 appear once and so it is the answer.
+     */
+        int[] appearOnceBrute={2,2,1};
+        sol.findNumberThatappearOnceBrute(appearOnceBrute);
+        int[] appearOnceBetterApproach={2,2,1};
+        sol.findNumberThatappearOnceBetterApproch(appearOnceBetterApproach);
+         int[] appearOnceBetterOptimal={2,2,1};
+         sol.findNumberThatappearOnceOptimalApproach(appearOnceBetterOptimal);
 
     }
 

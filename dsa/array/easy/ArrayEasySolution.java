@@ -375,5 +375,26 @@ System.out.println(Arrays.toString(arr));
     
     }
 
+    public void longestSubarray(int[] nums ,int k){
+        int left=0,right=0;
+        long currSum=0;
+        int maxlength=0;
+        int n=nums.length;
+        while (right < n) {
+            currSum+=nums[right];
+            while(left <=right && currSum > k){
+                currSum-=nums[left];
+                left++;
+            }
+            if (currSum == k) {
+            maxlength = Math.max(maxlength, right - left + 1);
+        }
+        right++;
+        }
+        System.out.println(maxlength);
+
+
+    }
+
 
 }

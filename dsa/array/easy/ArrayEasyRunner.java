@@ -110,6 +110,9 @@ public class ArrayEasyRunner {
          int[] appearOnceBetterOptimal={2,2,1};
          sol.findNumberThatappearOnceOptimalApproach(appearOnceBetterOptimal);
 
+      /* Longest subarray with given sum K(positives) */
+
+
     }
 
 }

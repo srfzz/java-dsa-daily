@@ -1,6 +1,8 @@
 package dsa.array.medium;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ArrayMediumSolution {
 public String sumEqualsTotarget(int[] arr,int target){
@@ -47,7 +49,7 @@ public String sumEqualsTotarget(int[] arr,int target){
                 mid++;
                 low++;
 
-            }
+            }else 
             if(nums[mid]==1){
                 mid++;
             }else{
@@ -59,5 +61,52 @@ public String sumEqualsTotarget(int[] arr,int target){
         }
         System.out.println(Arrays.toString(nums));
     }
+        /* Majority Element-I */
 
+         /* 
+    Example 1:
+    Input:
+    nums = [7, 0, 0, 1, 7, 7, 2, 7, 7]  
+    Output:
+    7  
+    Explanation:
+    The number 7 appears 5 times in the 9-sized array, making it the most frequent element.
+    
+    */
+
+    public void majorityElement(int[] nums){
+        int n=nums.length;
+        System.out.println(n+"-"+n/2);
+        Map<Integer,Integer> mNums=new HashMap<>();
+        for(int num:nums){
+            mNums.put(num,mNums.getOrDefault(num, 0)+1);
+
+        }
+        for(Map.Entry<Integer,Integer> entry:mNums.entrySet())
+        {
+            System.out.println(entry.getKey() +"-"+entry.getValue());
+            if(entry.getValue() > n/2 ){
+                System.out.println(entry.getKey());
+                return;
+            }
+        }
+        System.out.println(-1);
+    }
+    public void majorityElementOptimal(int[] nums){
+        int count=0;
+        int candidate=0;
+        for(int num:nums){
+            if(count == 0){
+                candidate=num;
+            }
+            if(num==candidate){
+                count++;
+            }else
+            {
+                count--;
+            }
+        }
+
+    System.out.println("majority Element is :"+candidate);
+    }
 }

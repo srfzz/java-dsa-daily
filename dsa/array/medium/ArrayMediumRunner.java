@@ -21,6 +21,23 @@ public class ArrayMediumRunner {
 
     int[] nums={1, 0, 2, 1, 0};
     sol.sortArrayInAscWithoutCreatingNewArray(nums);
+
+    /* Majority Element-I */
+
+    /* 
+    Example 1:
+    Input:
+    nums = [7, 0, 0, 1, 7, 7, 2, 7, 7]  
+    Output:
+    7  
+    Explanation:
+    The number 7 appears 5 times in the 9-sized array, making it the most frequent element.
+    
+    */
+   int[] mnums={7, 0, 0, 1, 7, 7, 2, 7, 7}; 
+   sol.majorityElement(mnums);
+    int[] mnumsOptimal={7, 0, 0, 1, 7, 7, 2, 7, 7}; 
+    sol.majorityElementOptimal(mnumsOptimal);
   }
 
 

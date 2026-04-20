@@ -57,8 +57,13 @@ A subarray is a contiguous non-empty sequence of elements within an array.
         Print subarray with maximum subarray sum (extended version of above problem)
 
    */
-  int[] printMaxSubArray={2, 3, 5, -2, 7, -4};
-  sol.printMaximumSubArraySum(printMaxSubArray);
+    int[] printMaxSubArray={2, 3, 5, -2, 7, -4};
+    sol.printMaximumSubArraySum(printMaxSubArray);
+
+    /* Stock Buy and Sell */
+    int[] stockPrices={10, 7, 5, 8, 11, 9};
+    sol.maxProfit(stockPrices);
+
   }
 
 

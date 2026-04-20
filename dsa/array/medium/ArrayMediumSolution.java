@@ -158,5 +158,27 @@ public String sumEqualsTotarget(int[] arr,int target){
                 System.out.print(i+",");
             }
         }
+
+
+        /*Stock Buy and Sell */
+        public void maxProfit(int[] prices){
+            System.out.println("Stock Buy and Sell:");
+            if(prices == null || prices.length < 2)
+            {
+                System.out.println("Invalid Array");
+            }
+            int minPrice=Integer.MAX_VALUE;
+            int maxProfit=0;
+            for(int i=0;i<prices.length;i++){
+                if(prices[i] < minPrice){
+                    minPrice=prices[i];
+                }
+                int potentailProfit=prices[i]-minPrice;
+                if(potentailProfit > maxProfit){
+                    maxProfit=potentailProfit;
+                }
+            }
+            System.out.print(maxProfit);
+        }
     
   }

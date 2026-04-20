@@ -1,7 +1,9 @@
 package dsa.array.medium;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ArrayMediumSolution {
@@ -99,7 +101,7 @@ public String sumEqualsTotarget(int[] arr,int target){
             if(count == 0){
                 candidate=num;
             }
-            if(num==candidate){
+            if(candidate==num){
                 count++;
             }else
             {
@@ -109,4 +111,52 @@ public String sumEqualsTotarget(int[] arr,int target){
 
     System.out.println("majority Element is :"+candidate);
     }
-}
+
+
+    /*Kadane's Algorithm : Maximum Subarray Sum in an Array */
+    public void maximumSubArraySum(int[] nums){
+        int maxvalue=Integer.MIN_VALUE;
+        int currSum=0;
+        for(int num:nums){
+            currSum+=num;
+            if(currSum > maxvalue){
+                maxvalue=currSum;
+            }
+            if(currSum < 0){
+                currSum=0;
+            }
+        }
+        System.out.println("Maximumuim Sum of Sub Array:"+maxvalue);
+    }
+
+    /* 
+        Print subarray with maximum subarray sum (extended version of above problem)
+
+   */ 
+  public void printMaximumSubArraySum(int[] nums){
+        int maxSum=Integer.MIN_VALUE;
+        int currSum=0;
+        int start=0;
+        int end=0;
+        int tempStart = 0;
+            for(int i=0;i<nums.length;i++){
+                currSum+=nums[i];
+                if(currSum > maxSum){
+                    maxSum=currSum;
+                    start=tempStart;
+                    end=i;
+                }
+                if(currSum < 0){
+                    currSum=0;
+                    tempStart=i+1;
+                }
+
+            }
+            System.out.println("Maximum Sum Of of an Array"+maxSum);
+            for(int i=start;i<=end;i++)
+            {
+                System.out.print(i+",");
+            }
+        }
+    
+  }

@@ -38,6 +38,27 @@ public class ArrayMediumRunner {
    sol.majorityElement(mnums);
     int[] mnumsOptimal={7, 0, 0, 1, 7, 7, 2, 7, 7}; 
     sol.majorityElementOptimal(mnumsOptimal);
+
+
+    /*
+    Kadane's Algorithm : Maximum Subarray Sum in an Array
+
+
+    36
+
+Problem Statement: Given an integer array nums, find the subarray with the largest sum and return the sum of the elements present in that subarray.
+
+A subarray is a contiguous non-empty sequence of elements within an array.
+    */
+   int[] maxSubArray={2, 3, 5, -2, 7, -4};
+   sol.maximumSubArraySum(maxSubArray);
+
+   /*
+        Print subarray with maximum subarray sum (extended version of above problem)
+
+   */
+  int[] printMaxSubArray={2, 3, 5, -2, 7, -4};
+  sol.printMaximumSubArraySum(printMaxSubArray);
   }
 
 

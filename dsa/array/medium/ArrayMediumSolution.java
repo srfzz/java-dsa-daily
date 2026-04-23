@@ -2,6 +2,8 @@ package dsa.array.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -215,5 +217,41 @@ public String sumEqualsTotarget(int[] arr,int target){
            }
             System.out.println("\n"+Arrays.toString(result));
          }
+         /*Leaders in an Array brute method */
+         public void leaderinArrayBrute(int[] arr){
+           int n =arr.length;
+           List<Integer> leaders=new ArrayList<>();
+           for(int i=0;i<n;i++){
+            boolean isLeader=true;
+            for(int j=i+1;j<n;j++){
+                if(arr[j]>arr[i])
+                {
+                    isLeader=false;
+                    break;
+                }
+                
+            }
+            if(isLeader){
+                    leaders.add(arr[i]);
+                }
+           }
+           System.out.println(leaders);
+
+         }
+          public void leaderinArrayOptimal(int[] arr){
+           int size =arr.length;
+           List<Integer> leaders=new ArrayList<>();
+           int max=arr[size-1];
+           leaders.add(max);
+           for(int i=size-2;i>=0;i--){
+            if(arr[i] >max){
+                max=arr[i];
+                leaders.add(arr[i]);
+            }
+           }
+         Collections.reverse(leaders);
+System.out.println(leaders);
+         }
+    
     
   }

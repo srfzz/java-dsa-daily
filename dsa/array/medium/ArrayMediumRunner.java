@@ -71,6 +71,12 @@ A subarray is a contiguous non-empty sequence of elements within an array.
      int[] reArrangeOptimal={1,2,3,-1,-2,-3};
      sol.reArragneElemetsBySignOptimal(reArrangeOptimal);
 
+     /* Leaders in an Array */
+     int[] bruteleaderInArray={10, 22, 12, 3, 0, 6};
+     sol.leaderinArrayBrute(bruteleaderInArray);
+    int[] optimalLeaderInArray={10, 22, 12, 3, 0, 6};
+    sol.leaderinArrayOptimal(optimalLeaderInArray);
+
   }
 
 

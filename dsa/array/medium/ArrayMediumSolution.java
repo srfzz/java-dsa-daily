@@ -180,5 +180,40 @@ public String sumEqualsTotarget(int[] arr,int target){
             }
             System.out.print(maxProfit);
         }
+         /* WAP to  Rearrange array elements by sign  */
+         public void reArragneElemetsBySignBrute(int[] arr){
+            int size =arr.length;
+            List<Integer> postitivIntegers=new ArrayList<>();
+            List<Integer> negetivIntegers=new ArrayList<>();
+            for(int i =0;i<size;i++){
+                if(arr[i]< 0){
+                    negetivIntegers.add(arr[i]);
+                }
+                if(arr[i] >=0){
+                    postitivIntegers.add(arr[i]);
+                }
+            }
+            int limit=Math.min(postitivIntegers.size(), negetivIntegers.size());
+            for(int i=0;i<limit;i++){
+                arr[2*i]=postitivIntegers.get(i);
+                arr[2*i+1]=negetivIntegers.get(i);
+            }
+            System.out.println(Arrays.toString(arr));
+         }
+         public void reArragneElemetsBySignOptimal(int[] arr){
+           int[] result=new int[arr.length];
+           int pos=0;
+           int neg=1;
+           for(int num:arr){
+            if(num > 0){
+                result[pos]=num;
+                pos+=2;
+            }else{
+                result[neg]=num;
+                neg+=2;
+            }
+           }
+            System.out.println("\n"+Arrays.toString(result));
+         }
     
   }

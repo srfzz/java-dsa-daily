@@ -64,6 +64,13 @@ A subarray is a contiguous non-empty sequence of elements within an array.
     int[] stockPrices={10, 7, 5, 8, 11, 9};
     sol.maxProfit(stockPrices);
 
+
+    /* WAP to  Rearrange array elements by sign  */
+    int[] reArrangeBrute={1,2,-3,-1,-2,-3};
+    sol.reArragneElemetsBySignBrute(reArrangeBrute);
+     int[] reArrangeOptimal={1,2,3,-1,-2,-3};
+     sol.reArragneElemetsBySignOptimal(reArrangeOptimal);
+
   }
 
 

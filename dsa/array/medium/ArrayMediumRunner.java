@@ -87,6 +87,19 @@ A subarray is a contiguous non-empty sequence of elements within an array.
     int[] longestSequenceOptimal={100, 4, 200, 1, 3, 2};
     sol.longestSequenceArrayOptimal(longestSequenceOptimal);
 
+
+    /*
+    Set Matrix Zero
+
+
+51
+
+Problem Statement: Given a matrix if an element in the matrix is 0 then you will have to set its entire column and row to 0 and then return the matrix..
+    
+    */
+   int[][] matrixBetter={{1,1,1},{1,0,1},{1,1,1}};
+   sol.setMatrixZeroBetter(matrixBetter);
+
   }
 
 

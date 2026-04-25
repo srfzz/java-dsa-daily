@@ -305,5 +305,41 @@ System.out.println(leaders);
         }
         System.out.println(longest);
     }
+
+
+    public void setMatrixZeroBetter(int[][] matrix){
+        if(matrix== null || matrix.length==0)
+        {
+            System.out.println("Invalid Array");
+        }
+        int rows=matrix.length;
+        int cols=matrix[0].length;
+
+        int[] rowMarkers=new int[rows];
+        int[] colMarkers=new int[cols];
+
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+                if(matrix[i][j]==0){
+                    rowMarkers[i]=1;
+                    colMarkers[j]=1;
+                }
+            }
+        }
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+                if(rowMarkers[i]==1 || colMarkers[j]==1){
+                    matrix[i][j]=0;
+                }
+            }
+        }
+        printArray(matrix);
+
+    }
+    private void printArray(int[][] matrix){
+        for(int[] row:matrix){
+            System.out.println(Arrays.toString(row));
+        }
+    }
     
   }

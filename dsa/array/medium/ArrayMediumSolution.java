@@ -252,6 +252,32 @@ public String sumEqualsTotarget(int[] arr,int target){
          Collections.reverse(leaders);
 System.out.println(leaders);
          }
-    
+     /*Longest Consecutive Sequence in an Array */
+    /*
+      Return the length of the longest sequence of consecutive integers. The integers in this sequence can appear in any order.
+      nums = [100, 4, 200, 1, 3, 2]  
+     */
+
+
+      public void longestConsequeticArrayBetter(int[] nums){
+        if(nums.length==0)
+        {
+            System.out.println("Enter a valid Array");
+        }
+       
+      Arrays.sort(nums);
+      int longest=1,maxCount=0,lastSmaller=Integer.MIN_VALUE;
+      for(int i=0;i<nums.length;i++){
+        if(nums[i]-1 ==lastSmaller){
+            maxCount++;
+            lastSmaller=nums[i];
+        }else if(nums[i] != lastSmaller){
+            maxCount=1;
+            lastSmaller=nums[i];            
+        }
+        longest=Math.max(longest, maxCount);
+    }
+    System.out.println(longest);
+      }
     
   }

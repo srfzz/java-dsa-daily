@@ -84,6 +84,8 @@ A subarray is a contiguous non-empty sequence of elements within an array.
      */
     int[] longestSequenceBetter={100, 4, 200, 1, 3, 2};
     sol.longestConsequeticArrayBetter(longestSequenceBetter);
+    int[] longestSequenceOptimal={100, 4, 200, 1, 3, 2};
+    sol.longestSequenceArrayOptimal(longestSequenceOptimal);
 
   }
 

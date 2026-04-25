@@ -5,8 +5,10 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class ArrayMediumSolution {
 public String sumEqualsTotarget(int[] arr,int target){
@@ -279,5 +281,29 @@ System.out.println(leaders);
     }
     System.out.println(longest);
       }
+
+    public void longestSequenceArrayOptimal(int[] nums){
+        int size= nums.length;
+        if(size== 0){
+            System.out.println("Enter  A valid Array");
+        }
+        int longest=1;
+        Set<Integer> set=new HashSet<>();
+        for(int num :nums){
+            set.add(num);
+        }
+        for(int it :set){
+            if(!set.contains(it-1)){
+                int count=1;
+                int x=it;
+                while (set.contains(x+1)) {
+                    count++;
+                    x++;
+                }
+                longest=Math.max(count, longest);
+            }
+        }
+        System.out.println(longest);
+    }
     
   }

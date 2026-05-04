@@ -18,6 +18,13 @@ public static void main(String[] args){
         int[] upperBoundArray = {3, 5, 8, 9, 15, 19}; 
         int upperBoundSearchNum = 9;
         sol.upperBound(upperBoundArray, upperBoundSearchNum);
+
+        /*problem Statement: You are given a sorted array arr of distinct values and a target value x. You need to search for the index of the target
+       
+        int x = 6; value in the array. */
+         int[] ElementIndexInsertarr = {1, 2, 4, 7};
+         int numTosearchAndinsert=5;
+         sol.BinarySearchInsertElement(ElementIndexInsertarr, numTosearchAndinsert);
     
 
 

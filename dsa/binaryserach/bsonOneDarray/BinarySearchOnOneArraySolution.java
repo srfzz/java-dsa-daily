@@ -77,5 +77,23 @@ public class BinarySearchOnOneArraySolution {
         }
         System.out.println(ans);
     }
+    
+        /*roblem Statement: You are given a sorted array arr of distinct values and a target value x. You need to search for the index of the target value in the array. */
+        public void BinarySearchInsertElement(int[] nums,int x){
+            int low=0;
+            int high=nums.length-1;
+            int ans=nums.length;
+            while(low <=high){
+                int mid =low+(high-low)/2;
+                if(nums[mid] >= x){
+                    ans=mid;
+                    high=mid-1;
+                }else
+                {
+                    low=mid+1;
+                }
+            }
+            System.out.printf("Elemnent where it need tio be insted is :%d",ans);
+        }
 
 }

@@ -9,6 +9,15 @@ public static void main(String[] args){
         int target = 6; 
         sol.findElementInSortedArray(arryToFindTwoPointer, target);
         sol.findElementusingRecurion(arryToFindTwoPointer, 0, arryToFindTwoPointer.length-1, target);
+
+        /*Given a sorted array of N integers and an integer x, write a program to find the lower bound of x. */
+        int[] lowerBoundArrayFinderarr = {3, 5, 8, 15, 19};  
+        int x = 9;                    
+        sol.lowerBound(lowerBoundArrayFinderarr, x);
+
+        int[] upperBoundArray = {3, 5, 8, 9, 15, 19}; 
+        int upperBoundSearchNum = 9;
+        sol.upperBound(upperBoundArray, upperBoundSearchNum);
     
 
 

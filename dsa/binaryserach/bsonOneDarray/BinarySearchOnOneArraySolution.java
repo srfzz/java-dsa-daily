@@ -45,4 +45,37 @@ public class BinarySearchOnOneArraySolution {
        }
      }
 
+     /*Given a sorted array of N integers and an integer x, write a program to find the lower bound of x. */ 
+     public void lowerBound(int[] nums,int x){
+            int low =0,high=nums.length-1;
+            int ans=nums.length;
+            while(low<=high){
+                int mid=low + (high-low)/2;
+                if(nums[mid] >=x){
+                    ans=mid;
+                    high=mid-1;
+                }else{
+                    low=mid+1;
+                }
+
+            }
+            System.out.println(ans);
+    }
+    public void  upperBound(int[] nums,int x){
+        int low =0,high=nums.length-1;
+        int ans=nums.length;
+        while(low <=high){
+            int mid = low + (high - low)/2;
+            if(nums[mid] > x){
+                ans=mid;
+                high=mid-1;
+            }else
+            {
+                low =mid+1;
+            }
+
+        }
+        System.out.println(ans);
+    }
+
 }

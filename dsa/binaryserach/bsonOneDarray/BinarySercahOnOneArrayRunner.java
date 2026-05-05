@@ -35,6 +35,17 @@ public static void main(String[] args){
          int[] findAndlastOcuuranceArray = {3, 4, 13, 13, 13, 20, 40};
          int fistAndlastOccuranceNoTarget=60;
          sol.findFirstAndLastOccuranceOfanElement(findAndlastOcuuranceArray, fistAndlastOccuranceNoTarget);
+
+         /* Search in rotated sorted array-I
+         
+         Given an integer array nums, sorted in ascending order (with distinct values) and a target value k. The array is rotated at some pivot point that is unknown. Find the index at which k is present and if k is not present return -1.
+         */
+        int[] sorteedArray={4, 5, 6, 7, 0, 1, 2};
+        int rotarrayelement=6;
+        sol.findIndexOfElementRotatedSortedArrayBrute(sorteedArray, rotarrayelement);
+        sol.findIndexOfElementRotatedSortedArrayOptimal(sorteedArray, rotarrayelement);
+
+
     
 
 

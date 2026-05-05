@@ -174,5 +174,54 @@ public class BinarySearchOnOneArraySolution {
         return ans;
 
     }
+        /* Search in rotated sorted array-I
+         
+         Given an integer array nums, sorted in ascending order (with distinct values) and a target value k. The array is rotated at some pivot point that is unknown. Find the index at which k is present and if k is not present return -1.
+         */
+        public void findIndexOfElementRotatedSortedArrayBrute(int[] nums,int target){
+            System.out.println("brute");
+            int size=nums.length-1;
+            int elementIndex=-1;
+            int i=0;
+            while(i<=size){
+                if(nums[i]==target){
+                    elementIndex=i;
+                    break;
+                }else
+                {
+                    elementIndex=-1;
+                }
+                i++;
+            }
+            System.out.println("Element index is :"+elementIndex);
+        }
+         public void findIndexOfElementRotatedSortedArrayOptimal(int[] nums,int target){
+            int low=0,high=nums.length-1;
+            int elementIndex=-1;
+            while(low<=high){
+                int mid = low +(high-low)/2;
+                if(nums[mid]==target){
+                    elementIndex=mid;
+                    break;
+                }
+                if(nums[low] <= nums[mid]){
+                    if(target >=nums[low] && target < nums[mid])
+                    {
+                        high=mid-1;
+                    }else
+                    {
+                        low=mid+1;
+                    }
+                }else{
+                    if (target > nums[mid] && target <= nums[high]) {
+                     low = mid + 1;  
+                    } else {
+                        high = mid - 1; 
+                    }
+                }
+            }
+            System.out.println("Element Index Is :"+elementIndex);
+        }
+
 
 }

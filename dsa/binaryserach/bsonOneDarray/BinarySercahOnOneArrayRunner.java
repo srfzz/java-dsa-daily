@@ -30,6 +30,11 @@ public static void main(String[] args){
          int[] floorAndCeil ={3, 4, 4, 7, 8, 10};
          int numforFloorAndCeil=5;
          sol.findFloorAndCeil(floorAndCeil, numforFloorAndCeil);
+
+         /* First and last occurrence */
+         int[] findAndlastOcuuranceArray = {3, 4, 13, 13, 13, 20, 40};
+         int fistAndlastOccuranceNoTarget=60;
+         sol.findFirstAndLastOccuranceOfanElement(findAndlastOcuuranceArray, fistAndlastOccuranceNoTarget);
     
 
 

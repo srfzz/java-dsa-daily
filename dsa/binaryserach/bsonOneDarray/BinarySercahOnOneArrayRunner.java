@@ -25,6 +25,11 @@ public static void main(String[] args){
          int[] ElementIndexInsertarr = {1, 2, 4, 7};
          int numTosearchAndinsert=5;
          sol.BinarySearchInsertElement(ElementIndexInsertarr, numTosearchAndinsert);
+
+         /*sorted array arr of n integers and an integer x. Find the floor and ceiling of x in arr[0..n-1]. The floor of x is the largest element in the array which is smaller than or equal to x. The ceiling of x is the smallest element in the array greater than or equal */
+         int[] floorAndCeil ={3, 4, 4, 7, 8, 10};
+         int numforFloorAndCeil=5;
+         sol.findFloorAndCeil(floorAndCeil, numforFloorAndCeil);
     
 
 

@@ -1,5 +1,7 @@
 package dsa.binaryserach.bsonOneDarray;
 
+import java.util.logging.LogManager;
+
 public class BinarySearchOnOneArraySolution {
 
     /*Search X in sorted array */
@@ -262,6 +264,39 @@ public class BinarySearchOnOneArraySolution {
                 {
                       System.out.println("false Element Index Found "+ans);
                 }
+        }
+
+        public void singleNonDuplicateSorted(int[] nums){
+           int n=nums.length;
+                if (n == 1) {
+                    System.out.println(nums[0]);
+                    return; // Stop here
+                }
+                if (nums[0] != nums[1]) {
+                    System.out.println(nums[0]);
+                    return; // Stop here
+                }
+                if (nums[n - 1] != nums[n - 2]) {
+                    System.out.println(nums[n - 1]);
+                    return; // Stop here
+                }
+           int low =1,high=n-2;
+           while(low<=high){
+            int mid =low+(high-low)/2;
+                if(nums[mid] !=nums[mid-1] && nums[mid] != nums[mid+1]){
+                    System.out.println("Element Found "+nums[mid]);
+                    return;
+                }
+                if ((mid % 2 == 0 && nums[mid] == nums[mid + 1]) || 
+                    (mid % 2 == 1 && nums[mid] == nums[mid - 1])) {
+                    low = mid + 1; 
+                } 
+                else {
+                    high = mid - 1; 
+                }
+
+           }
+           System.out.println("No Element Found");
         }
 
 

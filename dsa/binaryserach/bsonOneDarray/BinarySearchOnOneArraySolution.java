@@ -224,4 +224,45 @@ public class BinarySearchOnOneArraySolution {
         }
 
 
+        public void findElementExistsInAnSortedArrayTwo(int[] nums,int target){
+            int low =0;
+            int high=nums.length-1;
+            int ans=-1;
+            while(low<=high){
+                int mid =low+(high-low)/2;
+                if(nums[mid] == target){
+                    ans=mid;
+                    break;
+                }
+                if (nums[low] == nums[mid] && nums[mid] == nums[high]) {
+                low++;
+                high--;
+                continue; 
+                 }
+
+                if(nums[low]  <= nums[mid] ){
+                    if(target >=nums[low] && target < nums[mid]){
+                        high=mid-1;
+                    }else
+                    {
+                        low=mid+1;
+                    }
+                }else{
+                    if(target >= nums[mid] && target <= nums[high]){
+                        low=mid+1;
+                    }else
+                        high=mid-1;
+                }
+                
+
+            }
+            if(ans != -1){
+                    System.out.println("True Element Index Found "+ans);
+                }else
+                {
+                      System.out.println("false Element Index Found "+ans);
+                }
+        }
+
+
 }

@@ -12,7 +12,23 @@ public class BinarySearchOnAnswerRunner {
         
         */
        sol.findSqrRoot(25);
-        
+
+       /*
+       
+       Given two numbers N and M, find the Nth root of M. The nth root of a number M is defined as a number X when raised to the power N equals M. If the 'nth root is not an integer, return -1.
+       */
+        sol.NthRootOfANumber(3, 27);
+
+    /**
+     * 
+     *  Problem Statement: A monkey Koko is given ‘n’ piles of bananas, whereas the 'ith' pile has ‘a[i]’ bananas. An integer ‘h’ is also given, which denotes the time (in hours) for all the bananas to be eaten.
+
+        Each hour, the monkey chooses a non-empty pile of bananas and eats ‘k’ bananas. If the pile contains less than ‘k’ bananas, then the monkey consumes all the bananas and won’t eat any more bananas in that hour.
+
+        Find the minimum number of bananas ‘k’ to eat per hour so that the monkey can eat all the bananas within ‘h’ hours.
+     * 
+     * 
+     * **/
 
     }
 

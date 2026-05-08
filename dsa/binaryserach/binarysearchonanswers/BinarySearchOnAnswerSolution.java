@@ -106,6 +106,52 @@ giveen two numbers N and M, find the Nth root of M. The nth root of a number M i
             return max;
         }
         
+    /*** 
+     * 
+     * Problem Statement: You are given 'N’ roses and you are also given an array 'arr' where 'arr[i]' denotes that the 'ith' rose will bloom on the 'arr[i]th' day. You can only pick already bloomed roses that are adjacent to make a bouquet. You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet. Find the minimum number of days required to make at least ‘m' bouquets each containing 'k' roses. Return -1 if it is not possible.
+     * 
+     *
+     * ***/
+
+    public int minDaysRoseFlower(int[] bloomDay,int m,int k){
+        if((long) m*k > bloomDay.length){
+            return -1;
+        }
+        int low=Integer.MIN_VALUE;
+        int high=Integer.MIN_VALUE;
+        for(int day:bloomDay){
+            low=Math.min(day, low);
+            high=Math.max(day, high)
+        }
+        int result=high;
+        while(low <=high){
+            int mid=low+(high-low)/2;
+            if (canMakeBouquets(bloomDay, mid, m, k)) {
+                result = mid;      
+                high = mid - 1;   
+            } else {
+                low = mid + 1;    
+            }
+        }
+        return result;
+    }
+    private boolean canMakeBouquets(int[] bloomDays,int day,int m,int k){
+        int totalBouquets=0;
+        int count=0;
+        for(int roseDay:bloomDays){
+            if(roseDay <=day){
+                count++;
+                if(count == k){
+                    totalBouquets++;
+                    count=0;
+                }
+            }else
+            {
+                count=0;
+            }
+        }
+        return totalBouquets >=m;
+    }
 
 
 

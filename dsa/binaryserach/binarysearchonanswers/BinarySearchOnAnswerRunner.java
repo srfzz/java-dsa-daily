@@ -34,9 +34,11 @@ public class BinarySearchOnAnswerRunner {
         int h1 = 8;
         System.out.println("Minimum speed k = " + sol.minEatingSpeed(piles1, h1));
 
-    }
 
 
+
+
+    
     /*** 
      * 
      * Problem Statement: You are given 'N’ roses and you are also given an array 'arr' where 'arr[i]' denotes that the 'ith' rose will bloom on the 'arr[i]th' day. You can only pick already bloomed roses that are adjacent to make a bouquet. You are also told that you require exactly 'k' adjacent bloomed roses to make a single bouquet. Find the minimum number of days required to make at least ‘m' bouquets each containing 'k' roses. Return -1 if it is not possible.
@@ -44,5 +46,20 @@ public class BinarySearchOnAnswerRunner {
      * 
      * 
      * ***/
+    int[] bloomDay = {7, 7, 7, 7, 13, 11, 12, 7};
+        int m = 2;
+        int k = 3;
+
+        int result = sol.minDaysRoseFlower(bloomDay, m, k);
+
+        if (result == -1) {
+            System.out.println("Impossible to make " + m + " bouquets.");
+        } else {
+            System.out.println("\nFinal Result: The minimum days required is " + result);
+        }
+
+    }
+
+
 
 }

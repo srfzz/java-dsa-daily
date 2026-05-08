@@ -63,4 +63,51 @@ giveen two numbers N and M, find the Nth root of M. The nth root of a number M i
         return 0;
     }
 
+    /**
+     * 
+     *  Problem Statement: A monkey Koko is given ‘n’ piles of bananas, whereas the 'ith' pile has ‘a[i]’ bananas. An integer ‘h’ is also given, which denotes the time (in hours) for all the bananas to be eaten.
+
+        Each hour, the monkey chooses a non-empty pile of bananas and eats ‘k’ bananas. If the pile contains less than ‘k’ bananas, then the monkey consumes all the bananas and won’t eat any more bananas in that hour.
+
+        Find the minimum number of bananas ‘k’ to eat per hour so that the monkey can eat all the bananas within ‘h’ hours.
+     * 
+     * 
+     * **/
+        public int minEatingSpeed(int[] piles,int h){
+            int low=1;
+            int high=findMaxNum(piles);
+            int ans=high;
+            while(low<=high){
+
+                int mid=low+(high-low)/2;
+                long totalhours=calcaulateTotalHours(piles,mid);
+                if(totalhours <=h){
+                    ans=mid;
+                    high=mid-1;
+                }else{
+                    low=mid+1;
+                }
+            }
+            return ans;
+
+        }
+        private long calcaulateTotalHours(int[] piles,int k){
+            long totalH=0;
+            for(int p:piles){
+                totalH +=(p + k-1)/k;//to caluaclye ceil
+            }
+            return totalH;
+        }
+        private int findMaxNum(int[] piles){
+            int max=0;
+            for(int p:piles){
+                max=Math.max(max, p);
+            }
+            return max;
+        }
+        
+
+
+
+
 }

@@ -30,6 +30,10 @@ public class BinarySearchOnAnswerRunner {
      * 
      * **/
 
+        int[] piles1 = {3, 6, 7, 11};
+        int h1 = 8;
+        System.out.println("Minimum speed k = " + sol.minEatingSpeed(piles1, h1));
+
     }
 
 }

@@ -7,6 +7,10 @@ public class basicStringRunner {
 
         String s = "((()))";
         sol.removeOuterParentheses(s);
+
+        /*Reverse words in a given string / Palindrome Check */
+        String reserveWords="welcome to the jungle";
+        sol.ReverseWords(reserveWords);
     }
 
 }

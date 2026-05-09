@@ -22,8 +22,21 @@ public class basicStringSolution {
                 result.append(c);
             }
         }
-        System.out.println(result.toString());
+        
      }
+     System.out.println(result.toString());
+    }
+
+    /*Reverse words in a given string / Palindrome Check */
+    public void ReverseWords(String s){
+        StringBuilder result=new StringBuilder();
+        String[] words=s.split(" ");
+        int low=0,high=words.length-1;
+        while(low<=high){
+            result.append(words[high--]).append(" ");
+        }
+        System.out.println(result.toString().trim());
+    }
      
 
 }

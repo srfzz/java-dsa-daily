@@ -36,6 +36,18 @@ Longest Common Prefix */
             boolean result = sol.isIsomorphic(ss, tt);
             System.out.println("Input: " + ss + ", " + tt + " | Expected: " + expected + " | Result: " + result);
         }
+
+
+        /*Rotate String  */
+        String rotateStringInputS = "abcde";
+        String rotateStringInputGoal = "deabc";
+        System.out.println(sol.isRotation(rotateStringInputS, rotateStringInputGoal));
+
+        
+       String AnagraStr1 = "INTEGER";  
+        String AnagramStr2 = "TEGERNI"; 
+        sol.validAnagram(AnagraStr1, AnagramStr2);
+
     }
 
     

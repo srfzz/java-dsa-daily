@@ -92,8 +92,36 @@ Longest Common Prefix */
         mapS[charS]=i+1;
         mapT[charT]=i+1;
        }
-System.out.println("\nLength of s: " + Arrays.toString(mapS) + ", \nLength of t: " + Arrays.toString(mapT));
+        System.out.println("\nLength of s: " + Arrays.toString(mapS) + ", \nLength of t: " + Arrays.toString(mapT));
         return true;
     }
+     /*Check if one string is rotation of another*/
+    public boolean isRotation(String s,String goal){
+       if(s.length() !=goal.length()) return false;
+      String Combined=s+s;
+      return Combined.contains(goal);
+    }
+    
 
+
+    /* valid anagram */
+    public void validAnagram(String s,String t){
+        if(s.length() != t.length()) {
+            System.out.println("Not anagrams");
+            return;
+        }
+        int[] charCount=new int[256];
+        for(int i=0;i<s.length();i++){
+            charCount[s.charAt(i)]++;
+            charCount[t.charAt(i)]--;
+        }
+        for(int count : charCount){
+            if(count != 0){
+                System.out.println("Not anagrams");
+                return;
+            }
+        }
+        System.out.println("Anagrams");
+    }
+        
 }

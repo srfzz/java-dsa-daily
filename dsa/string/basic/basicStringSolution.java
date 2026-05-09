@@ -38,5 +38,29 @@ public class basicStringSolution {
         System.out.println(result.toString().trim());
     }
      
+ /**Largest Odd Number in a String */
+ public void largestOddNumber(String s){
+ int right=-1;
+ for(int i=s.length()-1;i>=0;i--){
+         int digit=s.charAt(i)-'0';
+        if(digit%2 !=0){
+            right=i;
+            break;
+        }
+
+    }
+    if(right==-1){
+        System.out.println("");
+        return;
+    }
+    int left=0;
+    while(left <right && s.charAt(left) =='0')
+    {
+        left++;
+    }
+    System.out.println(s.substring(left,right+1));
+ }
+ /*	
+Longest Common Prefix */
 
 }

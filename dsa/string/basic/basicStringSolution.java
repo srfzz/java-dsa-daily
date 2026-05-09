@@ -1,5 +1,7 @@
 package dsa.string.basic;
 
+import java.util.Arrays;
+
 public class basicStringSolution {
 
 
@@ -62,17 +64,36 @@ public class basicStringSolution {
  }
  /*	
 Longest Common Prefix */
-public String longestCommonPrefixString(String[] strs){
-    if(strs== null || strs.length == 0) return "";
-     for(int i=0;i< strs[0].length();i++){
-        char c=strs[0].charAt(i);
-        for(int j=1;j<strs.length;j++){
-            if(i==strs[j].length() || strs[j].charAt(i) !=c){
-                return strs[0].substring(0,i);
+    public String longestCommonPrefixString(String[] strs){
+        if(strs== null || strs.length == 0) return "";
+        for(int i=0;i< strs[0].length();i++){
+            char c=strs[0].charAt(i);
+            for(int j=1;j<strs.length;j++){
+                if(i==strs[j].length() || strs[j].charAt(i) !=c){
+                    return strs[0].substring(0,i);
+                }
             }
         }
-     }
-   return strs[0];
-}
+    return strs[0];
+    }
+
+    /** Isomorphic String */
+    public boolean isIsomorphic(String s, String t){
+       if(s.length() !=t.length()) return false;
+       int[] mapS=new int[256];
+       int[] mapT =new int[256];
+       System.out.println("Length of s: " + Arrays.toString(mapS) + ", \nLength of t: " + Arrays.toString(mapT));
+       for(int i=0;i<s.length();i++){
+        char charS=s.charAt(i);
+        char charT=t.charAt(i);
+        if(mapS[charS] != mapT[charT]){
+            return false;
+        }
+        mapS[charS]=i+1;
+        mapT[charT]=i+1;
+       }
+System.out.println("\nLength of s: " + Arrays.toString(mapS) + ", \nLength of t: " + Arrays.toString(mapT));
+        return true;
+    }
 
 }

@@ -48,6 +48,16 @@ Longest Common Prefix */
         String AnagramStr2 = "TEGERNI"; 
         sol.validAnagram(AnagraStr1, AnagramStr2);
 
+
+        /** Sort Characters by Frequency */
+        String sortCharsInput = "tree";
+        System.out.println(sol.frequencySort(sortCharsInput));
+
+
+        /* Maximum Nesting Depth of the Parentheses */
+        String maxDepthInput = "(1+(2*3)+((8)/4))+1";
+        System.out.println(sol.maxNestingDepth(maxDepthInput));
+
     }
 
     

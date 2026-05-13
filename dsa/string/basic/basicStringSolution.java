@@ -1,6 +1,9 @@
 package dsa.string.basic;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class basicStringSolution {
 
@@ -122,6 +125,54 @@ Longest Common Prefix */
             }
         }
         System.out.println("Anagrams");
+    }
+    public String frequencySort(String s){
+       if(s == null || s.length() ==0) return s;
+       Map<Character,Integer> frequesntMap=new  HashMap<>();
+       for(char c : s.toCharArray()){
+        frequesntMap.put(c,frequesntMap.getOrDefault(c,0)+1);
+       }
+     List<Character>[] buckets=new List[s.length()+1];
+     for(char c : frequesntMap.keySet()){
+        int freq=frequesntMap.get(c);
+        if(buckets[freq] == null){
+            buckets[freq]=new java.util.ArrayList<>();
+        }
+        buckets[freq].add(c);
+     }
+     StringBuilder sb = new StringBuilder();
+        for (int i = buckets.length - 1; i >= 0; i--) {
+            if (buckets[i] != null) {
+                for (char c : buckets[i]) {
+                    for (int j = 0; j < i; j++) {
+                        sb.append(c);
+                    }
+                }
+            }
+        }
+
+    return sb.toString();
+    }
+
+    public int maxNestingDepth(String s){
+        if(s == null || s.length() == 0) return 0;
+        int maxDepth=0;
+        int currentDepth=0;
+        int length=s.length();
+        for(int i=0;i<length;i++){
+            char c=s.charAt(i);
+            if(c=='('){
+              
+                currentDepth++;
+                if(currentDepth > maxDepth) {
+                maxDepth = currentDepth;
+                  System.out.println("currntDepth: " + currentDepth + ", maxDepth: " + maxDepth);
+            }
+            }else if(c==')'){
+                currentDepth--;
+            }
+        }
+        return maxDepth;
     }
         
 }

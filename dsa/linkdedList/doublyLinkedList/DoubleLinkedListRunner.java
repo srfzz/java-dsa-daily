@@ -35,5 +35,37 @@ public class DoubleLinkedListRunner {
     }
     System.out.println();
    }
+   public void deleteAtTheEnd(){
+   if(head == null) throw new RuntimeException("List is empty");
+   if(head == tail){
+    head=null;
+    tail=null;
+   }else{
+    DoubleLLNode temp=head;
+    head=head.next;
+    head.prev=null;
+    temp.next=null;
+   }
+   }
 
+   /* Reverse a Doubly Linked List */
+   public void reverse(){
+    if(head==null) throw new RuntimeException("List is empty");
+    DoubleLLNode current=head;
+    DoubleLLNode temp=null;
+
+    while(current!=null){
+       temp=current.prev;
+       current.prev=current.next;
+       current.next=temp;
+       current=current.prev;
+    }
+   temp=head;
+   head=tail;
+   tail=temp;
+   }
 }
+
+        
+   
+

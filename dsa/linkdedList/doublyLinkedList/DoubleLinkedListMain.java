@@ -8,6 +8,10 @@ public class DoubleLinkedListMain {
         doubleLinkedListRunner.insertAtTheHed(30);
         doubleLinkedListRunner.insertAtTheHed(40);
         doubleLinkedListRunner.display();
+        doubleLinkedListRunner.deleteAtTheEnd();
+        doubleLinkedListRunner.display();
+        doubleLinkedListRunner.reverse();
+        doubleLinkedListRunner.display();
     }
 
 }

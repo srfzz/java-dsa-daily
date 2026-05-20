@@ -45,6 +45,26 @@ private Node head;
         System.out.println("Middle of The Linked Lost is :"+slow.data);
     }
 
+    /**Reverse a LinkedList [Iterative] */
+
+    public void reverseListIterative(){
+        if(head == null){
+            System.out.print("List is empty");
+            return;
+        }
+
+     Node next =null;
+     Node current=head;
+     Node prev=null;
+     while(current!=null){
+        next=current.next;
+        current.next=prev;
+        prev=current;
+        current=next;
+     }
+    
+    }
+
 
 
 

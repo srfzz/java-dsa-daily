@@ -9,6 +9,8 @@ public class OneLinkedListMediumRunner {
     sol.insertNodeAtHead(60);
     sol.displayNode();
     sol.findMiddleOftheLinkedList();
+    sol.reverseListIterative();
+    sol.displayNode();
     }
 
 }

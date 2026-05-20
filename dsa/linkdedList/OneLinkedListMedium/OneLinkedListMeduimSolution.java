@@ -31,7 +31,19 @@ private Node head;
        
     }
 
-
+    //** middle of the lonkd list Middle of a LinkedList [TortoiseHare Method]*/
+    public void findMiddleOftheLinkedList(){
+        if(head == null){
+            System.out.println("ist id Empty");
+        }
+        Node slow= head;
+        Node fast=head;
+        while(fast!=null && fast.next != null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        System.out.println("Middle of The Linked Lost is :"+slow.data);
+    }
 
 
 

@@ -8,6 +8,7 @@ public class OneLinkedListMediumRunner {
     sol.insertNodeAtHead(50);
     sol.insertNodeAtHead(60);
     sol.displayNode();
+    sol.findMiddleOftheLinkedList();
     }
 
 }
